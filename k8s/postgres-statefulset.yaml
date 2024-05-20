@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: postgres:13
+        image: postgres:11
         ports:
         - containerPort: 5432
         volumeMounts:
@@ -29,19 +29,13 @@ spec:
           value: postgres
         - name: POSTGRES_PASSWORD
           value: postgres
-
-
-    volumeClaimTemplates:
-    - metadata:
-        name: postgres-data
-      spec:
-        accessModes:
-        - ReadWriteOnce
-        storageClassName: nfs-client
-        resources:
-          requests:
-            storage: 5Gi
-
-
-
-
+  volumeClaimTemplates:
+  - metadata:
+      name: postgres-data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      storageClassName: nfs-client
+      resources:
+        requests:
+          storage: 5Gi
