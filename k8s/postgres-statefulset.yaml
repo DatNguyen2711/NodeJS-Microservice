@@ -17,7 +17,6 @@ spec:
       containers:
       - name: postgres
         image: postgres:13
-
         ports:
         - containerPort: 5432
         volumeMounts:
@@ -30,8 +29,7 @@ spec:
           value: postgres
         - name: POSTGRES_PASSWORD
           value: postgres
-        - name: PG_DATA
-          value: /var/lib/postgresql/pgdata
+
 
     volumeClaimTemplates:
     - metadata:
