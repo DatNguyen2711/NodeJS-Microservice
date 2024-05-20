@@ -33,14 +33,17 @@ spec:
         - name: PG_DATA
           value: /var/lib/postgresql/pgdata
 
-   volumeClaimTemplates:
+    volumeClaimTemplates:
     - metadata:
         name: postgres-data
       spec:
         accessModes:
-          - ReadWriteOnce
+        - ReadWriteOnce
         storageClassName: nfs-client
         resources:
           requests:
             storage: 5Gi
-            
+
+
+
+
